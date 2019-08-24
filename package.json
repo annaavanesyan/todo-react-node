@@ -5,6 +5,8 @@
   "main": "src/main.js",
   "scripts": {
     "start": "nodemon src/main.js",
+    "migrate-up": "sequelize db:migrate",
+    "migrate-down": "sequelize db:migrate:undo:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

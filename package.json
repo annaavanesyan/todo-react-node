@@ -1,0 +1,30 @@
+{
+  "name": "todo-react-node",
+  "version": "1.0.0",
+  "description": "Web application for creating to do lists with checkmarks, documents and medias.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "nodemon src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annaavanesyan/todo-react-node.git"
+  },
+  "keywords": [
+    "todo",
+    "react",
+    "node"
+  ],
+  "author": "Anna Avanesyan aanna.work@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annaavanesyan/todo-react-node/issues"
+  },
+  "homepage": "https://github.com/annaavanesyan/todo-react-node#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "nodemon": "^1.19.1"
+  }
+}

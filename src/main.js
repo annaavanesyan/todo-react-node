@@ -16,11 +16,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 /** ROUTES **/
-app.use(routes.routes());
-app.use(routes.allowedMethods());
+app.use('/', routes);
 
 /** SERVER CONFIGURATION **/
 const server = require('http').createServer(app);
 const port = process.env.PORT || config.get('PORT');
 
-server.listen(port, () => { console.info(`Server is running on port : 3000`) });
+server.listen(port, () => { console.info(`Server is running on port: ${port}`) });

@@ -1,9 +1,13 @@
 'use strict';
 
-const Router = require('koa-router');
+const express = require('express');
+const router = express.Router();
 
-const router = new Router({ prefix: '/v1' });
+router.use(function(req, res, next) {
+    console.log('inside the router');
+    next();
+});
 
-router.get('/ping', ctx => ctx.ok('pong'));
+router.get('/ping', (req, res) => res.send('pong'));
 
 module.exports = router;

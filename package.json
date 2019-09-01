@@ -2,14 +2,15 @@
   "name": "todo-react-node",
   "version": "1.0.0",
   "description": "Web application for creating to do lists with checkmarks, documents and medias.",
-  "main": "src/main.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "server": "nodemon src/main.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "migrate-up": "sequelize db:migrate",
-    "migrate-down": "sequelize db:migrate:undo:all",
+    "start-server": "nodemon server/main.js",
+    "build-client": "react-scripts build /client",
+    "start-client": "react-scripts start",
+    "dev": "concurrently \"yarn run start-client\" \"yarn run start-server\"",
+    "migration-new": "sequelize migration:generate --migrations-path server/data/migrations --name ",
+    "migrate-up": "sequelize db:migrate --migrations-path server/data/migrations",
+    "migrate-down": "sequelize db:migrate:undo:all --migrations-path server/data/migrations",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,6 +29,8 @@
   },
   "homepage": "https://github.com/annaavanesyan/todo-react-node#readme",
   "dependencies": {
+    "@material-ui/core": "^4.3.3",
+    "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.2",
     "dotenv": "^8.1.0",
@@ -39,7 +42,21 @@
     "nodemon": "^1.19.1",
     "path": "^0.12.7",
     "pg": "^7.12.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
     "react-scripts": "^3.1.1",
     "sequelize": "^5.16.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
